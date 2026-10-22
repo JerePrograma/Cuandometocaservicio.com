@@ -1,79 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="es-AR">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cuando me toca servicio</title>
-    <link
-      href="https://unpkg.com/fullcalendar@v5/main.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="style.css" />
-    <script src="https://www.googletagmanager.com/gtag/js?id=G-JB5STV6F2W"></script>
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="img/Logo_JerePrograma_500mp.png"
-    />
-    <script
-      async
-      src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8095178368719048"
-      crossorigin="anonymous"
-    ></script>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Consultá tus próximas jornadas de servicio en esquemas de 12×36, 24×48 y 48×96, agregá anotaciones y guardá tu calendario en PDF.">
+    <title>¿Cuándo me toca servicio? | Scalaris</title>
+    <link rel="icon" type="image/png" href="img/Logo_JerePrograma_500mp.png">
+    <link rel="stylesheet" href="style.css">
+    <script defer src="vendor/fullcalendar-6.1.22.min.js"></script>
+    <script defer src="vendor/fullcalendar-es-6.1.22.min.js"></script>
+    <script defer src="vendor/html2canvas-1.4.1.min.js"></script>
+    <script defer src="vendor/jspdf-4.2.1.min.js"></script>
+    <script type="module" src="script.js"></script>
   </head>
   <body>
     <main>
-      <h1>¿Cuando me toca Servicio?</h1>
+      <a class="back-link" href="https://scalaris.com.ar/proyectos/">← Proyectos de Scalaris</a>
+      <h1>¿Cuándo me toca servicio?</h1>
+      <p class="intro">Elegí tu esquema y el primer día de servicio para ver las próximas jornadas hasta fin de año.</p>
       <div class="main-container">
         <div class="input-container">
           <div class="input-field">
-            <label class="text-primary" for="horario">Elegí tu horario</label>
+            <label for="horario">Tu horario</label>
             <select id="horario" name="horario">
-              <option value="12x36">12x36</option>
-              <option value="24x48">24x48</option>
-              <option value="48x96">48x96 (2x4)</option>
+              <option value="12x36">12×36</option>
+              <option value="24x48">24×48</option>
+              <option value="48x96">48×96 (2×4)</option>
             </select>
           </div>
           <div class="input-field">
-            <label class="text-primary" for="fecha">Elegí una Fecha</label>
-            <input type="date" id="fecha" name="fecha" />
+            <label for="fecha">Primer día de servicio</label>
+            <input type="date" id="fecha" name="fecha" required>
           </div>
         </div>
         <div class="botones">
-          <div class="btn-calcular">
-            <button id="calcular">Calcular Fechas</button>
-          </div>
-          <div class="pdf-button">
-            <button id="generatePDF" class="btn btn-primary">
-              Guardar PDF
-            </button>
-          </div>
+          <button id="calcular" type="button">Calcular fechas</button>
+          <button id="generatePDF" type="button">Guardar PDF</button>
         </div>
       </div>
-      <h2>Haciendo click en el calendario, podés agregar anotaciones.</h2>
+      <p id="status" role="status" aria-live="polite"></p>
+      <h2>Hacé clic en un día para agregar una anotación.</h2>
+      <p class="privacy">El calendario y las notas se procesan en este navegador y no se guardan al cerrar la página.</p>
       <div id="calendar"></div>
     </main>
     <footer class="footer">
-      <img src="img/Logo_JerePrograma_500mp.png" alt="" height="60px" />
-      <p>Jeremias Rivelli</p>
-      <a href="mailto:jeremias.j.riv@gmail.com">jeremias.j.riv@gmail.com</a>
-      <p>¡Tu donación ayuda a mejorar la página!</p>
-      <div class="MercadoPago">
-        <input type="text" value="0000003100041503610176" id="cvuInput" />
-        <button onclick="copyToClipboard('cvuInput')">
-          Copiar CVU (MercadoPago)
-        </button>
-        <input type="text" value="Jeremias.Rivelli" id="aliasInput" />
-        <button onclick="copyToClipboard('aliasInput')">
-          Copiar Alias (MercadoPago)
-        </button>
-      </div>
+      <img src="img/Logo_JerePrograma_500mp.png" alt="JerePrograma" width="60" height="60">
+      <p>Proyecto de Jeremías Rivelli · <a href="https://github.com/JerePrograma/Cuandometocaservicio.com" target="_blank" rel="noopener noreferrer">JerePrograma</a></p>
+      <p>Las anotaciones y fechas no se envían a un servidor.</p>
     </footer>
-
-    <script src="fullcalendar-6.1.8/dist/index.global.min.js"></script>
-    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
-    <script src="script.js"></script>
   </body>
 </html>

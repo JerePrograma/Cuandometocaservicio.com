@@ -1,241 +1,33 @@
-* {
-  font-family: Helvetica, sans-serif;
-}
-
-.main-container {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  margin-top: 20px;
-}
-
-.input-container,
-.botones {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 150px;
-}
-
-label {
-  font-size: 1.6em;
-  color: #007bff;
-}
-
-.input-field {
-  width: 300px;
-  text-align: center;
-  border-radius: 0.8em;
-}
-.botones button {
-  width: 300px;
-}
-.botones button,
-.footer button,
-button {
-  padding: 1em 2em;
-  border: none;
-  border-radius: 5px;
-  font-weight: bold;
-  letter-spacing: 5px;
-  text-transform: uppercase;
-  color: #2c9caf;
-  transition: all 1000ms;
-  font-size: 15px;
-  position: relative;
-  overflow: hidden;
-  outline: 2px solid #2c9caf;
-}
-
-.botones button:hover,
-.footer button:hover,
-button {
-  color: #ffffff;
-  transform: scale(1.1);
-  outline: 2px solid #70bdca;
-  box-shadow: 4px 5px 17px -4px #268391;
-}
-
-.botones button::before,
-.footer button::before {
-  content: "";
-  position: absolute;
-  left: -50px;
-  top: 0;
-  width: 0;
-  height: 100%;
-  background-color: #2c9caf;
-  transform: skewX(45deg);
-  z-index: -1;
-  transition: width 1000ms;
-}
-
-.botones button:hover::before,
-.footer button:hover::before {
-  width: 250%;
-}
-
-#horario,
-#fecha {
-  box-sizing: border-box;
-  width: 100%;
-  padding: 0 20px;
-  text-align: center;
-  height: 35px;
-  border: 1px solid #ccc;
-  border-radius: 0.5em;
-  font-size: 1.3em;
-}
-
-#calcular,
-#generatePDF {
-  height: 65px;
-  padding: 10px 20px;
-  font-size: 1.5em;
-  color: #fff;
-  border: none;
-  background-color: #007bff;
-}
-
-.footer button {
-  color: #fff;
-  background-color: #007bff;
-}
-
-#calendar {
-  display: flex;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.fc-header-toolbar {
-  justify-content: end;
-  align-items: end;
-}
-
-.fc-header-toolbar,
-.fc-view-harness {
-  width: 80%;
-  align-self: center;
-}
-
-#calendar th,
-#calendar td,
-#calendar tr {
-  border: 3px solid #625e6e;
-  border-collapse: collapse;
-}
-
-.fc-daygrid-day-number {
-  font-size: 3em;
-  color: #007bff;
-}
-
-footer {
-  text-align: center;
-  padding-bottom: 20px;
-}
-
-.MercadoPago {
-  display: flex;
-  justify-content: center;
-}
-
-footer input {
-  font-size: 1.2em;
-  border: none;
-  text-align: center;
-  margin-right: 20px;
-  width: 300px;
-}
-
-footer button {
-  border-radius: 0.5em;
-  background-color: #007bff;
-  color: #fff;
-  border: none;
-  padding: 10px;
-  max-width: 450px;
-  align-self: center;
-  font-size: 1.2em;
-  margin: 10px;
-}
-
-.fc-sticky {
-  font-size: 20px;
-}
-@media (max-width: 700px) {
-  .main-container {
-    flex-direction: column;
-    height: 400px;
-  }
-
-  #calendar {
-    scale: 0.98;
-  }
-  .fc-header-toolbar,
-  .fc-view-harness {
-    width: 100%;
-  }
-
-  .MercadoPago {
-    flex-direction: column;
-  }
-  .fc-daygrid-day-number {
-    font-size: 2em;
-    color: #007bff;
-  }
-  .footer button {
-    color: #fff;
-    background-color: #007bff;
-    height: 20px;
-    width: 400px;
-    padding: 0;
-  }
-  .fc-sticky {
-    font-size: 15px;
-  }
-  footer input {
-    font-size: 1.2em;
-    border: none;
-    text-align: center;
-    margin-right: 0;
-    width: auto;
-  }
-  .fc-media-screen {
-    height: 80vh;
-  }
-}
-
-h1 {
-  text-align: center;
-  margin-top: auto;
-  font-size: 2em;
-  color: #007bff;
-}
-
-.fc-toolbar-title::first-letter {
-  text-transform: capitalize;
-}
-
-.fc-toolbar-title {
-  font-size: 1.6em;
-  color: #007bff;
-}
-
-.fc-col-header-cell-cushion {
-  color: #007bff;
-  text-shadow: -1px -1px 0 black, 1px -1px 0 black, -1px 1px 0 black,
-    1px 1px 0 black;
-}
-
-.fc-col-header-cell-cushion::first-letter {
-  text-transform: capitalize;
-}
-
-h2 {
-  text-align: center;
-  margin-top: auto;
-  font-size: 1, 5em;
-  color: #007bff;
-}
+:root{font-family:Arial,Helvetica,sans-serif;color:#16344b;background:#f4f8fb;line-height:1.5;--fc-button-bg-color:#176caa;--fc-button-border-color:#176caa;--fc-button-hover-bg-color:#105788;--fc-button-hover-border-color:#105788;--fc-button-active-bg-color:#0b4269;--fc-button-active-border-color:#0b4269;--fc-border-color:#ccdbe5;--fc-today-bg-color:#e7f4ff;--fc-event-bg-color:#176caa;--fc-event-border-color:#176caa}
+*{box-sizing:border-box}
+body{margin:0}
+main{max-width:1180px;margin:auto;padding:25px 25px 45px}
+a{color:#176caa;text-underline-offset:3px}
+.back-link{display:inline-block;margin-bottom:18px;font-size:14px}
+h1{margin:10px 0;color:#176caa;text-align:center;font-size:clamp(27px,5vw,38px)}
+.intro,.privacy{text-align:center;color:#536d7e;max-width:760px;margin:10px auto}
+.main-container{display:flex;justify-content:center;align-items:flex-end;gap:25px;flex-wrap:wrap;margin:30px auto;padding:25px;background:#fff;border:1px solid #dbe5ec;border-radius:12px}
+.input-container{display:flex;gap:20px;flex-wrap:wrap}
+.input-field{display:flex;flex-direction:column;gap:8px;min-width:220px;flex:1}
+label{font-size:16px;font-weight:600}
+select,input{min-height:43px;padding:9px 12px;border:1px solid #bacbd8;border-radius:6px;font:inherit;color:inherit;background:white;width:100%}
+.botones{display:flex;gap:12px;flex-wrap:wrap}
+button{border:1px solid #176caa;background:#176caa;color:white;min-height:43px;border-radius:6px;padding:10px 16px;font:inherit;font-weight:600;cursor:pointer}
+button:hover{background:#105788}
+button:disabled{opacity:.65;cursor:wait}
+button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{outline:3px solid #f1a83d;outline-offset:3px}
+h2{text-align:center;font-size:17px;font-weight:500;margin:24px 0 8px}
+.privacy{font-size:13px}
+#status{min-height:24px;text-align:center;font-size:14px;color:#265d7e}
+#calendar{padding:24px;background:white;border:1px solid #dbe5ec;border-radius:12px;margin-top:24px}
+.fc-toolbar-title::first-letter{text-transform:uppercase}
+.fc-toolbar-title{color:#176caa}
+.fc-daygrid-day-number{font-size:1.3em;color:#176caa;text-decoration:none}
+.fc-col-header-cell-cushion{color:#36576e;text-decoration:none}
+.event-content{max-width:100%;overflow-wrap:anywhere;white-space:normal;padding:2px 4px;font-size:12px}
+.event-title{font-weight:600}
+.event-note{font-size:12px}
+.footer{text-align:center;border-top:1px solid #dbe5ec;background:white;padding:25px;font-size:13px;color:#536d7e}
+.footer img{object-fit:contain}
+.footer p{margin:8px 0}
+@media(max-width:700px){main{padding:18px 12px 30px}.main-container{padding:18px;gap:20px}.input-container,.input-field,.botones{width:100%;min-width:0}.input-container{gap:16px}.input-field{flex-basis:100%}.botones button{flex:1;padding-inline:9px}#calendar{padding:10px 5px}.fc .fc-toolbar{align-items:flex-start;gap:12px;flex-wrap:wrap}.fc .fc-toolbar-title{font-size:1.3em}.fc .fc-button{font-size:12px;padding:7px}.fc-daygrid-day-number{font-size:1em}.event-content,.event-note{font-size:10px}.intro{font-size:14px}}
